@@ -1,0 +1,202 @@
+# Importações de outros arquivos python.
+from src.settings import *
+
+class AllRoles(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+
+    # Infos
+    @commands.hybrid_command(name = "infos")
+    #@commands.check(AllowedChannels)
+    async def infos(self, ctx):
+        embed = discord.Embed(
+            title = "🔰 **AFTER DAWN 怒** 🔰",
+            description = """
+Bem-vindo à comunidade AFTER DAWN 怒!
+
+Aqui, celebramos a diversidade e a individualidade, unindo mentes criativas e almas vibrantes que compartilham uma paixão por um estilo de vida fora do comum. AFTER DAWN 怒 é muito mais do que uma comunidade; é um refúgio para aqueles que ousam ser diferentes, uma casa para espíritos livres e criativos que se destacam da multidão.
+
+Nossa missão é reunir pessoas com uma vibe única, um estilo que vai além dos limites convencionais da sociedade. Se você é apaixonado por carros, fascinado por drift e JDM, se você vive para a moda streetwear, techwear, darkwear, ou se você é um entusiasta do rap e trap, um gótico, um emo, um programador ou designer - você encontrou seu lar.
+
+Aqui, a individualidade é celebrada, e as diferenças são aplaudidas. Nossa comunidade é um lugar onde a paixão por diferentes estilos se encontra e se mistura, criando uma sinergia única e inspiradora. Troque experiências sobre carros, compartilhe os beats que fazem seu coração bater mais forte, discuta os últimos lançamentos de moda ou conecte-se com outros góticos e emos que entendem verdadeiramente sua expressão artística.
+
+AFTER DAWN 怒 é um espaço seguro para ser você mesmo, para abraçar quem você é sem medo de julgamentos. Estamos aqui para criar laços, compartilhar conhecimento e celebrar a riqueza que cada indivíduo traz para esta comunidade.
+
+Sinta-se à vontade para explorar os diferentes canais e tópicos que oferecemos, conecte-se com pessoas de mentalidades afins e faça desta comunidade um reflexo autêntico de sua essência. Juntos, construímos um amanhecer único após a escuridão, um lugar onde cada membro brilha com sua própria luz.
+
+Bem-vindo à família AFTER DAWN 怒 - onde a diferença é a nossa maior força! 🌌✨
+""",
+            color = 0x6800FF
+        )
+        await ctx.send(embed = embed)
+        await ctx.message.delete() # apaga a mensagem do autor do comando.
+
+    # Regras
+    @commands.hybrid_command(name = "rules")
+    #@commands.check(AllowedChannels)
+    async def rules(self, ctx):
+        embed = discord.Embed(
+            title = "❗ **REGRAS DA COMUNIDADE** ❗",
+            description = "",
+            color = 0xFF0000
+        )
+        embed.add_field(
+            name = "1. Respeito:",
+            value = "Trate todos os membros com cortesia e respeito. Evite linguagem ofensiva, difamatória ou discriminatória.",
+            inline = False
+        )
+        embed.add_field(
+            name = "2. Sem discriminação::",
+            value = "Não toleramos qualquer forma de discriminação, incluindo racismo, homofobia, sexismo, ou qualquer outro comportamento discriminatório.",
+            inline = False
+        )
+        embed.add_field(
+            name = "3. Sem brigas ou conflitos:",
+            value = "Mantenha debates e discussões construtivas. Evite brigas, ataques pessoais e provocações. Se houver desentendimentos, resolva-os de maneira civilizada e respeitosa.",
+            inline = False
+        )
+        embed.add_field(
+            name = "4. Sem piadas ofensivas:",
+            value = "Evite piadas que possam ser interpretadas como ofensivas, especialmente relacionadas a temas sensíveis como raça, gênero, orientação sexual, etc.",
+            inline = False
+        )
+        embed.add_field(
+            name = "5. Sem pornografia ou conteúdo adulto:",
+            value = "Não compartilhe ou promova material pornográfico, adulto ou qualquer conteúdo explicitamente sexual.",
+            inline = False
+        )
+        embed.add_field(
+            name = "6. Sem spam ou publicidade não autorizada:",
+            value = "Evite fazer spam ou promover produtos/serviços sem permissão. Se deseja compartilhar algo, peça permissão primeiro aos administradores.",
+            inline = False
+        )
+        embed.add_field(
+            name = "7. Respeito à privacidade:",
+            value = "Não compartilhe informações pessoais de outros membros sem permissão. Isso inclui dados como endereços, números de telefone, etc.",
+            inline = False
+        )
+        embed.add_field(
+            name = "8. Sem conteúdo ilegal ou pirataria:",
+            value = "Não compartilhe ou discuta atividades ilegais, incluindo pirataria, hacking ou qualquer tipo de comportamento criminoso.",
+            inline = False
+        )
+        embed.add_field(
+            name = "9. Linguagem adequada:",
+            value = "Mantenha uma linguagem adequada. Evite palavrões e linguagem ofensiva excessiva.",
+            inline = False
+        )
+        embed.add_field(
+            name = "10. Respeito às regras específicas de cada canal:",
+            value = "Cada canal pode ter regras específicas adicionais. Certifique-se de respeitar e seguir as orientações fornecidas pelos moderadores.",
+            inline = False
+        )
+        embed.add_field(
+            name = "11. Colabore com os moderadores:",
+            value = "Siga as instruções dos moderadores. Se tiver dúvidas ou preocupações, entre em contato com a equipe de moderação de forma privada.",
+            inline = False
+        )
+        embed.add_field(
+            name = "12. Sem políticas ou religião em excesso:",
+            value = "Evite discussões excessivamente políticas ou religiosas que possam criar divisões na comunidade.",
+            inline = False
+        )
+        await ctx.send(embed = embed)
+        await ctx.message.delete() # apaga a mensagem do autor do comando.
+
+    # Termos
+    @commands.hybrid_command(name = "terms")
+    #@commands.check(AllowedChannels)
+    async def terms(self, ctx):
+        embed = discord.Embed(
+            title = "✅ **TERMOS DA COMUNIDADE** ✅",
+            description = "Marque a reação ✅ para confimar que você leu e aceita os termos da comunidade.",
+            color = 0x00D800
+        )
+        await ctx.send(embed = embed)
+        await ctx.message.delete() # apaga a mensagem do autor do comando.
+
+    @commands.hybrid_command(name = "invite")
+    async def invite(self, ctx):
+        embed = discord.Embed(
+            title = "↪️ **LINK DE CONVITE DA COMUNIDADE** ↩️",
+            description = "Convide seus amigos para participarem da nossa comunidade.",
+            color = 0x6900FF
+        )
+        embed.add_field(
+            name = "• https://discord.gg/dfc4PYNH3J",
+            value = " ",
+            inline = True
+        )
+        await ctx.send(embed = embed)
+        await ctx.message.delete() # apaga a mensagem do autor do comando.
+
+    # Cargos Gerais
+    @commands.hybrid_command(name = "role1")
+    #@commands.check(AllowedChannels)
+    async def role1(self, ctx):
+        embed = discord.Embed(
+            title = "🌐「 CARGOS PRINCIPAIS 」🌐",
+            description = "",
+            color = 0x5900FF
+        )
+        embed.add_field(
+            name = " ⤵⤵⤵ ",
+            value = "`|` 🎤 `|` ➾ Artista\n`|` 🎼 `|` ➾ Beatmaker\n`|` 🖥️ `|` ➾ Programador\n`|` 🌆 `|` ➾ Designer\n`|` 🎮 `|` ➾ Gamer",
+            inline = False
+        )
+        await ctx.send(embed = embed)
+        await ctx.message.delete() # apaga a mensagem do autor do comando.
+
+    # Cargos Especiais
+    @commands.hybrid_command(name = "role2")
+    #@commands.check(AllowedChannels)
+    async def role2(self, ctx):
+        embed = discord.Embed(
+            title = "🌐「 CARGOS ESPECIAIS 」🌐",
+            description = "",
+            color = 0x5900FF
+        )
+        embed.add_field(
+            name = " ⤵⤵⤵ ",
+            value = "`|` 🧥 `|` ➾ Techwear\n`|` 🥷 `|` ➾ Darkwear\n`|` 👟 `|` ➾ Streetwear\n`|` 🧬 `|` ➾ Rap & Trap\n`|` 🖤 `|` ➾ Gothic",
+            inline = False
+        )
+        await ctx.send(embed = embed)
+        await ctx.message.delete() # apaga a mensagem do autor do comando.
+
+    # Cargos de Rap & Trap
+    @commands.hybrid_command(name = "role3")
+    #@commands.check(AllowedChannels)
+    async def role3(self, ctx):
+        embed = discord.Embed(
+            title = "🌐「 ARTISTAS, RAP & TRAP 」🌐",
+            description = "",
+            color = 0x5900FF
+        )
+        embed.add_field(
+            name = " ⤵⤵⤵ ",
+            value = "`|` 🖤 `|` ➾ Emo Rap\n`|` 💥 `|` ➾ Detroit\n`|` ☠️ `|` ➾ Phonk\n`|` ✨ `|` ➾ Aesthetic Rap\n`|` 👹 `|` ➾ Trap Metal\n`|` 🔥 `|` ➾ Drill Music\n`|` 🇬🇧 `|` ➾ UK Drill\n`|` ❄️ `|` ➾ Cloud Rap\n`|` 🌌 `|` ➾ EDM Trap",
+            inline = False
+        )
+        await ctx.send(embed = embed)
+        await ctx.message.delete() # apaga a mensagem do autor do comando.
+
+    # Cargos de Programador
+    @commands.hybrid_command(name = "role4")
+    #@commands.check(AllowedChannels)
+    async def role4(self, ctx):
+        embed = discord.Embed(
+            title = "🌐「 PROGRAMADORES 」🌐",
+            description = "",
+            color = 0x5900FF
+        )
+        embed.add_field(
+            name = " ⤵⤵⤵ ",
+            value = "`|` 🔵 `|` ➾ Cpp\n`|` #️⃣ `|` ➾ C Sharp\n`|` 🔰 `|` ➾ Python\n`|` ♨️ `|` ➾ Java\n`|` 🌐 `|` ➾ Web Dev.\n`|` 🟢 `|` ➾ Node",
+            inline = False
+        )
+        await ctx.send(embed = embed)
+        await ctx.message.delete() # apaga a mensagem do autor do comando.
+
+async def setup(bot):
+    await bot.add_cog(AllRoles(bot))
